@@ -114,7 +114,7 @@ public class ArrayPractice
     int max = data[0];  // will hold the maximum value
 
     for(int i = 1; i < data.length; i++) {
-        if(data[i] > m) {
+        if(data[i] > max) {
             max = data[i];
         }
     }
@@ -153,9 +153,6 @@ public class ArrayPractice
 
   public static void main( String[] args )
   {
-
-    // remove the comments as you complete each routine
-    // and add more lines as you add additional routines.
 
     int[] data = buildRandomArray(10, 20);
     int[] data2 = buildIncreasingArray(10,5,3);
@@ -216,4 +213,3 @@ public class ArrayPractice
       
   }
 }
-Footer
