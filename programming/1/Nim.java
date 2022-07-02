@@ -43,7 +43,7 @@ public class Nim {
         
         //when the user tries to take less than 1 or greater than 3, this will happen
         // keep prompting for correct answer if needed
-        while(stonesTaken > 3 || stonesTaken < 1) { // badness
+        if(stonesTaken > 3 || stonesTaken < 1) { // badness
             System.out.println("Ooops, that's not a valid number of stones to take!  Try again.");
             stonesTaken = input.nextInt();
             input.nextLine();
@@ -60,6 +60,9 @@ public class Nim {
             System.out.println("There are now " + stones + " stones in the bag.\n It's now the AI's turn."); 
         }
         
+        
+       
+
         // AI's turn - GOAL: WIN!
         stonesTaken = 4 - stonesTaken;
         System.out.println("The computer chose to take " + stonesTaken);
@@ -71,7 +74,9 @@ public class Nim {
         } else {
         
         System.out.println("There are now " + stones + " stones in the bag.\n It's now your turn.");
-        }  
+        }
+
+        
     }
 
    
