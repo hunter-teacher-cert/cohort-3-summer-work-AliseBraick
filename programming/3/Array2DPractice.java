@@ -245,15 +245,21 @@ public class Array2DPractice
     char[][] b = buildBoard(4,4,'Q');    
     printBoard(b); 
     
-    char[][] c = copyBoard (b);
-    printBoard (c);
+   // char[][] c = copyBoard (b);
+   // printBoard (c);
 
-    setRow (b, 3, '%');
-    printBoard (b);
+    //setRow (b, 3, '%');
+   // printBoard (b);
     
     explodeSquare(b, 3, 3);
     System.out.println("--------------");
-    printBoard(b); 
+    printBoard(b);
+
+    b[1][1] = 'c';
+    b[2][3] = 'c';
+    System.out.println("--------------");
+    explodeAllChar (b,'c');
+    printBoard(b);
 
 
     
