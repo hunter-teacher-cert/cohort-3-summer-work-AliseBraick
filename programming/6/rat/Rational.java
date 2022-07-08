@@ -68,7 +68,7 @@ public class Rational
 //   // uses the most precise floating point primitive
    public double floatValue()
    {
-     double value = (double)_numerator/(double) _denominator;
+     double value = (double)_numerator/_denominator;
 		 return value;
    } 
    
