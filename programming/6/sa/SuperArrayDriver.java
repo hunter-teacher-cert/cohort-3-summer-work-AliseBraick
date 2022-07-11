@@ -8,10 +8,22 @@ public class SuperArrayDriver
     
     System.out.println("Testing default constructor.");
     SuperArray sa = new SuperArray();
+    
     System.out.println("Testing empty print:");
     System.out.println(sa);
+    
     System.out.println("Testing isEmpty (should be true)");
     System.out.println(sa.isEmpty());
+    
+    //testing a randome super array (sa)😇😇😇
+    SuperArray sr = new SuperArray(50);
+    
+    Random r = new Random ();
+    for( int i = 0; i< 15; i++){
+      sr.add(r.nextInt(3));
+    }
+    System.out.println(sr);
+    System.out.println(sr.debug());
     // -----------------------------------------------------------
     // YOUR HOMEGROWN/HOUSEMADE/ROLL-YOUR-OWN TEST METHODS HERE...
     // -----------------------------------------------------------
@@ -30,8 +42,8 @@ public class SuperArrayDriver
     // sa.add(17, 100);
     // System.out.println(sa);
     // System.out.println("\nTesting remove at 0, 5, and 15 (end)");
-    // sa.remove(0);
-    // System.out.println(sa);
+    sa.remove(0);
+    System.out.println(sa);
     // sa.remove(5);
     // System.out.println(sa);
     // sa.remove(15);

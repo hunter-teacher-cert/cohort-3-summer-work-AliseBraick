@@ -18,6 +18,7 @@
 import java.io.*;
 import java.util.*;
 
+
 public class SuperArray
 {
   /**
@@ -59,7 +60,12 @@ public class SuperArray
 
   // ~~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~
   public void add( int value )
+	//this method appends a value after the last "real" element
   {
+    if(data.length == numberElements){
+      grow();
+    }
+   
     // test to see if we need to grow, then grow
     /**
        IMPORTANT:
@@ -77,24 +83,23 @@ public class SuperArray
     // increment numberElements
     /* YOUR SIMPLE+SMART CODE HERE */
     numberElements++;
+    //data[numberElements++] = value;     increments as well
   }//end add()
 
 
   public boolean isEmpty()
   {
     //return whether this SuperArray instance is empty
-    /* YOUR SIMPLE+SMART CODE HERE */
-    if( numberElements == 0){
-      return true;
-    }
-    return false;
+		//Reminder that a boolean asks a question and returns true or false, so you do not need if/else--that's built in.  When we write "numberElements==0" we are asking "Is the number of elements 0?  The answer is returned.
+    return numberElements == 0;
+      
   }
 
 
   public int get(int index)
   {
     //return item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
+   
     return data[index];
   }
 
@@ -103,10 +108,17 @@ public class SuperArray
   {
     //return stringified version of this Object
     /* YOUR SIMPLE+SMART CODE HERE */
-    String dataS= "";
-    for( int i = 0; i< numberElements; i++){
-     dataS = dataS + data[i] + " "; 
+    String dataS = "";
+    if (numberElements !=0){
+      dataS= "{ "+ data[0];
+      for( int i = 1; i< numberElements; i++){
+     dataS = dataS + ", " + data[i]; 
     }
+    dataS = dataS + "}";
+    }
+		//go through the number of "real elements", not data.length
+    
+    
     return dataS;
   }//end toString()
 
@@ -130,41 +142,69 @@ public class SuperArray
   public void remove(int index)
   {
     // shift items down to remove the item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // subtract fom numElements;
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for (int i = index; i<numberElements; i++ ){
+      data[i]= data[i+1];
+    }
+  // subtract fom numElements;
+    numberElements--;
   }
 
 
   public void add(int index, int value)
+	//inserts an element at a given index
   {
     // see if there's enough room
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    // if ( index > data.length){
+    //   grow(index);
+    // }
+    
+    if( numberElements == data.length){
+     grow(); 
+   }
     // shift elements toward the end of the array
-    /* YOUR SIMPLE+SMART CODE HERE */
+    for(int i= numberElements-1; i>= index; i--){
+      data[i+1] = data[i];
+      
+    }
 
     // insert new element
-    /* YOUR SIMPLE+SMART CODE HERE */
+    data[index]= value;
 
     // increment numElements
-    /* YOUR SIMPLE+SMART CODE HERE */
+    numberElements++;
+    //data[numberElements++] = value;     increments as well
   }
 
-
+//Private because there is no reason to call this outside the class.  It is an internal operation that is called from other methods in this class.
   private void grow()
   {
     // create a new array with extra space
-    // Q: How did you decide how much to increase capacity by?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    
+    int updatedData[] = new int[data.length+5];
 
     // copy over all the elements from the old array to the new one
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    for (int i = 0; i <data.length; i++){
+      updatedData[i] = data[i];
+    }
     // point data to the new array
     // Q: How does this look when illustrated using encapsulation diagram?
-    /* YOUR SIMPLE+SMART CODE HERE */
+  data = updatedData;
+  }//end grow()
+
+  //grow with size parameter
+  private void grow(int size)
+  {
+    // create a new array with extra space
+    // Q: How did you decide how much to increase capacity by?
+    int updatedData[] = new int[data.length+ size];
+
+    // copy over all the elements from the old array to the new one
+    for (int i = 0; i <data.length; i++){
+      updatedData[i] = data[i];
+    }
+    // point data to the new array
+    // Q: How does this look when illustrated using encapsulation diagram?
+  data = updatedData;
   }//end grow()
 
 }//end class
