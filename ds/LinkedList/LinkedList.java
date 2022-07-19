@@ -104,21 +104,23 @@ public class LinkedList{
   "a"-> "z" -> "b" -> "c" -> "d"
   */
   public void add(int index, String value){
-    Node walker = head;
-    Node myNode = new Node(value);
-
+    
+     if (index ==0){
+       this.add(value); // adding to the front
+    } else {
+        Node walker = head;
+        Node myNode = new Node(value);
+    
     for(int i = 0; i < index-1 && walker.getNext() != null;
         i++){
+      // if index > size append to end as per condition of for loop
       walker = walker.getNext();
     }
     
     myNode.setNext(walker.getNext());
     walker.setNext(myNode);
   }
-
-  
-
-
+}
   /**
   Returns the index (location) of the first node in the list
   that contains value.
@@ -128,6 +130,15 @@ public class LinkedList{
   indexOf("d") would return 3 since "d" is at location 3.
   */
   public int indexOf(String value){
+    Node walker = head;
+    int counter = 0;
+    while(walker != null){
+      if (walker.getData() == value){
+        return counter;  
+      }
+      walker = walker.getNext();
+      counter++;
+    }
     return 0;
   }
 
@@ -139,7 +150,14 @@ public class LinkedList{
   the array.
   */
   public String[] toArray(){
-    return null;
+    String [] a = new String[this.size()];
+    Node walker = head;
+    
+    for (int i = 0; i <a.length; i++){
+      a[i] = walker.getData(); // copy to array
+      walker = walker.getNext(); // jump to next node
+    }
+    return a;
   }
 
 

@@ -41,9 +41,9 @@ public class Node{
   }
 
   
-  // toString
+  //toString
   
-  //public String toString(){
-    //return "" + data + "->";
-  //}
+  public String toString(){
+    return "" + data + "->";
+  }
 }
