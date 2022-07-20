@@ -21,7 +21,7 @@ Students understand variables, sequence, and the structure of for loops (regardl
 ### Go!
 1. Students will complete single loop activity as a warm-up
 1. Introduction to activity - example silly dance?
-1. Whole class activity (slide to the right, slide to the left, turn around 360*, say  !  Repeat this five times).
+1. Whole class activity (slide to the right, slide to the left, turn around 360*, say hey !  Repeat this five times).
 1. Nested Looped (slide to the right, slide to the left, turn around 360*, say woo!  Repeat this five times) and say hoo hoo after each loop of the above. Do this outer loop step 2x.
 1. Break into smaller groups and develop more complex dance and document based on skill level and concept attainment. This allows for differentiation between the groups based on skill level/interest.
 
