@@ -75,7 +75,6 @@ public class SortSearch{
       smallIndex = i;
     }
   }
-	
 	return smallIndex;
     }
 
@@ -116,9 +115,12 @@ public class SortSearch{
        This algorithm works on any ArrayList.
     */
     public int linearSearch(int value){
-	
-	
-	return 0; // replace this return
+      for (int i = 0; i < data.size(); i++){
+        if (data.get(i) == value){
+          return i;
+        }
+      }
+	    return -1; // replace this return
     }
     
     /**

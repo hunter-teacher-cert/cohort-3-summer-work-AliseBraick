@@ -4,27 +4,26 @@ import java.util.*;
 public class SortSearchDriver {
     public static void main(String[] args) {
 
-
-	// Uncomment these to test part 1
+	    SortSearch ss = new SortSearch(20);
+	    System.out.println(ss);
 	
-	SortSearch ss = new SortSearch(20);
-	System.out.println(ss);
+      SortSearch sd2 = new SortSearch(10);
+	    System.out.println(sd2);
+      
+	    int i;
+	     i = ss.findSmallestIndex(5);
+	     System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
+    
+	    i = sd2.findSmallestIndex(3);
+	     System.out.println("sd2["+ i + "] = "+sd2.get(i)+" : " + sd2);
 	
-		
-	// Uncomment these to test part 2
+  
+	    ss.sort(); //testing sort
+	    System.out.println(ss);
 
-	// int i;
-	// i = ss.findSmallestIndex(0);
-	// System.out.println("ss["+ i +"] = "+ss.get(i)+" : " + ss);
-
-	// i = sd2.findSmallestIndex(3);
-	// System.out.println("ss["+ i + "] = "+ss.get(i)+" : " + ss);
-	
-	// Uncomment these to test part 3
-
-	// System.out.println(ss);
-	// ss.sort();
-	// System.out.println(ss);
+  
+      System.out.print(ss);//testing linearSearch
+      System.out.println("value found at index " + ss.linearSearch(10));
 	
 
 
