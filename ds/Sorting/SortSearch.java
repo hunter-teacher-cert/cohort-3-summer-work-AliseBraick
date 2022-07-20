@@ -69,7 +69,7 @@ public class SortSearch{
       
     */
     public int findSmallestIndex(int start){
-	    int smallIndex = start;
+	    int smallIndex = start; // according to what index would like to start from
       for(int i = start; i < data.size(); i++){
       if( data.get(i) < data.get(smallIndex)){
       smallIndex = i;
@@ -100,7 +100,7 @@ public class SortSearch{
             data.set(i, smallval); //puts the smallest values at the start position
             data.set(smallindex, startval); //puts the start value at the smallest values position
         }
-
+//PS : swapElements method written before could also be used😇😇
     }
 
 
@@ -129,11 +129,22 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
     public int binarySearch(int value){
+    
+// set firstIndex, set lastIndex
+// set middleIndex to (firstIndex + lastIndex)/2
 
-	// create assign variables  representing the high, low and middle indices 
-	// while we're not done:
-	//   if the item is at data.get(middle), return middle
-	//   otherwise, update high, low, and middle
+// while middleIndexValue != targetValue
+
+//   //compare the middleIndexValue to targetValue
+//   if middleIndexValue is < targetvalue
+//     set firstIndex to middleIndex
+//   else if middleIndexValue > targetValue
+//     set lastIndex to middleIndex
+
+//   set middleIndex to (firstIndex + lastIndex)/2
+
+//   if firstIndex == middleIndex || lastIndex == middleIndex
+//     return -1
 
 	return 0;
 	    
