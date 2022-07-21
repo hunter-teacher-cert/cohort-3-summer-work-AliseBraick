@@ -129,26 +129,28 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
     public int binarySearch(int value){
-    
-// set firstIndex, set lastIndex
-// set middleIndex to (firstIndex + lastIndex)/2
-
-// while middleIndexValue != targetValue
-
-//   //compare the middleIndexValue to targetValue
-//   if middleIndexValue is < targetvalue
-//     set firstIndex to middleIndex
-//   else if middleIndexValue > targetValue
-//     set lastIndex to middleIndex
-
-//   set middleIndex to (firstIndex + lastIndex)/2
-
-//   if firstIndex == middleIndex || lastIndex == middleIndex
-//     return -1
-
-	return 0;
-	    
+      int lowIndex = 0; 
+      int highIndex = data.size()-1;
+      int midIndex = (highIndex + lowIndex)/2;
+      
+      while (lowIndex <=midIndex && midIndex <= highIndex ){
+        int midValue = data.get(midIndex);
+        if (midValue == value){
+          return midIndex;
+          
+          // checking the upper bound
+        } else if (midValue < value){
+          lowIndex = midIndex + 1;
+          midIndex = (highIndex + lowIndex)/2;
+           // checking the lower bound 
+        } else {
+          highIndex = midIndex -1;
+          midIndex = (highIndex + midIndex)/2;
+        } 
+      }
+      return -1; // value not found
     }
+
     
     /**
        Implement a RECURSIVE binary search as specified by the comments
