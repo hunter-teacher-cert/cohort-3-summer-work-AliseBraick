@@ -5,7 +5,7 @@ public class ScaffoldDriver{
 
 public static void main(String[] args){
 
-  list = new RandomArrayList();
+  RandomArrayList list = new RandomArrayList();
   //list2 = new RandomArrayList(20);
 
   System.out.println(list);

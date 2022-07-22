@@ -20,10 +20,13 @@ Steps:
     3. Create a new random object called r
 	  
     4. Loop through array, and add a random integer of a value between 0 and 19
+
+    5. Challenge: create another constuctor that takes a parameter of size. 
 	    
 */
-    }
+    
   public String toString(){
 	return ""+data;
     }
+  // for runnable code go to https://github.com/hunter-teacher-cert/cohort-3-summer-work-SAYbaw/tree/master/methods/06_scaffold_activity
 }
