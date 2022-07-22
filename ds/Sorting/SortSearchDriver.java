@@ -25,8 +25,11 @@ public class SortSearchDriver {
       System.out.print(ss);//testing linearSearch
       System.out.println("value found at index " + ss.linearSearch(10));
 
-      System.out.print(ss);
+      System.out.print(ss); //testing BinarySearch
       System.out.println("index = " + ss.binarySearch(4));
+
+      System.out.print(ss);//testing recursive Search
+      System.out.println(" recursive Search found value at index " + ss.binarySearchRecursive(6 ,0, 19));
 	
 
 

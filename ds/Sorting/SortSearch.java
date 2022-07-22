@@ -69,13 +69,16 @@ public class SortSearch{
       
     */
     public int findSmallestIndex(int start){
+      
 	    int smallIndex = start; // according to what index would like to start from
+      
       for(int i = start; i < data.size(); i++){
       if( data.get(i) < data.get(smallIndex)){
-      smallIndex = i;
+        
+      smallIndex = i; 
     }
   }
-	return smallIndex;
+	  return smallIndex;//return index
     }
 
 
@@ -117,10 +120,10 @@ public class SortSearch{
     public int linearSearch(int value){
       for (int i = 0; i < data.size(); i++){
         if (data.get(i) == value){
-          return i;
+          return i; //return index of the target value
         }
       }
-	    return -1; // replace this return
+	  return -1; // if value not found
     }
     
     /**
@@ -159,17 +162,30 @@ public class SortSearch{
     */
 
     public int binarySearchRecursive(int value, int lowIndex, int highIndex){
-
-	// refer to class discussion
-	
-	return 0;
+      int midIndex = ( lowIndex + highIndex)/2;
+      
+       // Base case: condition to exit the recursion loop
+      if (lowIndex > highIndex){ //thanks for the demo
+        return -1;
+      }
+      // Another base case: return midIndex if midIndex === value
+      if (data.get(midIndex) == value){
+        return midIndex;
+      }
+      //recursive for the upper bound
+      else if (data.get(midIndex) < value) {
+        return binarySearchRecursive(value, midIndex + 1, highIndex);
+          // recursive for lower bound
+      } else {
+        return binarySearchRecursive(value, lowIndex, midIndex -1);
+      }
 	    
     }
     
 	
     public String toString(){
-	return ""+data;
-    };
+	    return "" + data;
+    }
 
 
     public void builtinSort(){
