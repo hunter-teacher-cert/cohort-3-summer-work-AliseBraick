@@ -192,7 +192,63 @@ public class SortSearch{
 	Collections.sort(data);
 	
     }
-    
+
+  /* Merge Sort Stuff after here */
+    /**
+       Builds and returns an ArrayList that's already in increasing order.
+       You can use this method to test your merge method.
+    */
+    public ArrayList<Integer> buildIncreasingList(int size){
+	ArrayList<Integer>  newlist = new ArrayList<Integer>();
+	Random r = new Random();
+	int nextval = r.nextInt(20)+1;
+	for (int i=0;i<size;i++){
+	    newlist.add(nextval);
+	    nextval = nextval + r.nextInt(20);
+	}
+
+	return newlist;
+	}
+
+    /**
+       this routine should create and return a new ArrayList of
+       integers and fill it by merging list1 and list2 into the new
+       list.
+       list1 and list2 are already sorted in increasing order.
+       Example:
+       If list1 contains [1,5,17,25]
+       and list2 contains [3,6,10,30,40,50]
+       The new list will contain:
+       [1, 3, 5, 6, 10, 17, 25, 30, 40, 50]
+       
+    */
+       
+    public ArrayList<Integer> merge(ArrayList<Integer> list1,
+				    ArrayList<Integer> list2){
+      // code for merge
+      ArrayList<Integer> mergedList = new ArrayList<Integer>();
+
+      while (list1.size() > 0 && list2.size() > 0 ) { // while lists aren't empty (1 or more list is not empty)
+        if(list1.get(0) < list2.get(0)) { 
+         mergedList.add(list1.get(0));
+         list1.remove(0);
+       } else {
+         mergedList.add(list2.get(0));
+         list2.remove(0);
+       }    
+      }
+      if(list1.size() > 0) {
+        for(int i = 0; i < list1.size(); i++) {
+          mergedList.add(list1.get(i));
+        }
+      } 
+      if(list2.size() > 0 ) {
+         for(int i = 0; i < list2.size(); i++) {
+          mergedList.add(list2.get(i));
+        }
+      }
+	    return mergedList; 
+    }  
+}
 
     
-}

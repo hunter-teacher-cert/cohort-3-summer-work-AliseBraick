@@ -42,27 +42,41 @@ public class LinkedList{
   /**
   Returns the String in the node at location index.
   */
+  //Thank you Taylor for using for loop
   public String get(int index){
-		Node walker = head;
-    // walker != null is making sure we don't go PAST
-    // the linked list.
-		while(walker != null && index > 0){
-			index = index-1; //index--
-      walker = walker.getNext();
-		}
-    /*
-    for(int i = 0; i < index && walker != null; i++){
+	  Node walker = head;
+    // Loop shifts over if not yet at the index
+    for (int i = 0; i <index; i++){
+      if (walker == null){
+        return "";
+      }
       walker = walker.getNext();
     }
-    */
-
-    if(walker == null){
-      System.out.println("Oops, that's outside of our LinkedList size! Returning blank string.");
-      return "";
-    }else{
-      return walker.getData();
-    }
+    return walker.getData();
   }
+ 
+  //Another method (thank you Kate)
+ /* public String get(int index){
+    int count = 0;
+    Node walker = this.head;
+    String s = "Invalid index";
+
+    if(index < 0 ) { 
+      return s;
+    }
+    
+    while(count <= index && walker != null) {
+      if(count == index) {
+        s = walker.getData();
+      }
+      walker = walker.getNext();
+      count++;
+    }
+    return s;
+  }
+
+  /**
+  
 
   /**
   Return a string representation of the list

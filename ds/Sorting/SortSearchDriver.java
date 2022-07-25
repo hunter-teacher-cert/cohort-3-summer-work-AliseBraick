@@ -30,6 +30,22 @@ public class SortSearchDriver {
 
       System.out.print(ss);//testing recursive Search
       System.out.println(" recursive Search found value at index " + ss.binarySearchRecursive(6 ,0, 19));
+
+  // TestingbuildIncrease +  merge
+  ArrayList<Integer> a = ss.buildIncreasingList(20);
+	System.out.println(a);
+
+	// build a second Arralist here
+	ArrayList<Integer> b = ss.buildIncreasingList(25);
+	System.out.println(b);
+
+	// test your merge routine here
+      ArrayList<Integer> merged = ss.merge(a, b);
+      System.out.println(merged);
+
+      
+    }
+}
 	
 
 

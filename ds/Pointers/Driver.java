@@ -16,15 +16,29 @@ public class Driver{
 	front.getNext().setNext(new Node("three"));
 	front.getNext().getNext().setNext(new Node("four"));
 
-	System.out.println(front.getData());
+	//System.out.println(front.getData());
 
-	Node walker;
+  Node walker;
+
+	walker = front;
+	System.out.println(front.getData());
+	
+  walker = walker.getNext();
+	System.out.println(walker.getData());
+	System.out.println(front.getNext().getData());
+
+  walker = front;
+	System.out.println(walker).getData();
+  System.out.println ("--------");
+
+	
 
 	walker = front;
       while(walker != null){
-        System.out.println(walker);
+       System.out.println(walker);
         walker = walker.getNext();
       }
+   System.out.println();
 	// System.out.println(front.getData());
 	// walker = walker.getNext();
 	// System.out.println(walker.getData());
@@ -55,5 +69,4 @@ public class Driver{
 	// 3. loops until walker gets to null
 	
     }
-
 }
