@@ -222,8 +222,8 @@ public class SortSearch{
        [1, 3, 5, 6, 10, 17, 25, 30, 40, 50]
        
     */
-       
-    public ArrayList<Integer> merge(ArrayList<Integer> list1,
+    // team collaboration //
+  public ArrayList<Integer> merge(ArrayList<Integer> list1,
 				    ArrayList<Integer> list2){
       // code for merge
       ArrayList<Integer> mergedList = new ArrayList<Integer>();
