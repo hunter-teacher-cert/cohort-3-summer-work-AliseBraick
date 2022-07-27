@@ -250,6 +250,7 @@ public class SortSearch{
 	    return mergedList; 
     }  
 // 
+  // Thank you Taylor for the demo. you used a easy way to split the array and the print statemnets were great!
   public ArrayList<Integer> mergeSort(ArrayList<Integer> list){
       int size = list.size();
       // check for base case
