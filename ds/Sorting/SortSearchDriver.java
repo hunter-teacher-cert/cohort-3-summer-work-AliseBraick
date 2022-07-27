@@ -31,11 +31,11 @@ public class SortSearchDriver {
       System.out.print(ss);//testing recursive Search
       System.out.println(" recursive Search found value at index " + ss.binarySearchRecursive(6 ,0, 19));
 
-  // TestingbuildIncrease +  merge
+  // TestingbuildIncrease 
   ArrayList<Integer> a = ss.buildIncreasingList(5);
 	System.out.println(a);
 
-	// build a second Arralist here
+	// build a second Arralist 
 	ArrayList<Integer> b = ss.buildIncreasingList(7);
 	System.out.println(b);
 
@@ -43,6 +43,37 @@ public class SortSearchDriver {
       ArrayList<Integer> merged = ss.merge(a, b);
       System.out.println(merged);
 
+  // testing the recursive sortmerge
+      SortSearch test = new SortSearch(15);
+      test.msort(); 
+     System.out.println(test); 
+
+      
+  /*    
+  int size = 40000;
+    long start,elapsed;
+	  start = System.currentTimeMillis();
+	    //  test below
+    SortSearch test = new SortSearch(size);
+    // System.out.println(test); 
+    // System.out.println("sorting"); 
+    test.sort();
+    // System.out.println(test); 
+	  elapsed = System.currentTimeMillis() - start;
+	  System.out.println("Size: " + size + " Time: " + elapsed);
+      
+
+    start = System.currentTimeMillis();
+	    // put what you want to test here!
+    test = new SortSearch(size);
+    //System.out.println(test); 
+   // System.out.println("sorting"); 
+    test.msort(); 
+    // System.out.println(test); // testing the recursive sortmerge
+	  elapsed = System.currentTimeMillis() - start;
+	  System.out.println("Size: " + size + " Time: " + elapsed);
+      */
+          
       
     }
 }

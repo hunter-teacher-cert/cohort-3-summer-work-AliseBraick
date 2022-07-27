@@ -249,6 +249,32 @@ public class SortSearch{
       }
 	    return mergedList; 
     }  
+// 
+  public ArrayList<Integer> mergeSort(ArrayList<Integer> list){
+      int size = list.size();
+      // check for base case
+      if(size < 2) {
+        return list;
+      } else {
+        ArrayList<Integer> listLeft = new ArrayList<Integer>(list.subList(0, size/2)); // lower half
+        ArrayList<Integer> listRight = new ArrayList<Integer>(list.subList(size/2, size)); // upper half
+        ArrayList<Integer> sortedLeft = mergeSort(listLeft); // sorted lower
+        ArrayList<Integer> sortedRight = mergeSort(listRight); // sorted upper
+        ArrayList<Integer> sorted = merge(sortedLeft, sortedRight);
+        return sorted;
+      }
+    
+      // if not the base case
+      // split in two lists
+      // meregSort the left half
+      // mergeSort the right half
+      // merge them together into a new list
+      // return that new list 
+
+  }
+  public void msort(){
+      data = mergeSort(data);
+  } 
 }
 
     
