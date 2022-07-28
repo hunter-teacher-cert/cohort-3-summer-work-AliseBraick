@@ -10,7 +10,7 @@ the programming assignments have been turned in.
 according to the assignmnet's given criteria. 
 
 * Your job is to write a paragraph on the strengths and weaknesses of each program to be 
-presented to the entire class. 
+presented to the entire class.  Make sure your feedback is according to the given criteria
 
 ### Why this collaborative technique is importnat?
  * The entire class can observe possibly different ways to complete an assignment.
