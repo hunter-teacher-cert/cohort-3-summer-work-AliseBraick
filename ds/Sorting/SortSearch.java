@@ -222,7 +222,7 @@ public class SortSearch{
        [1, 3, 5, 6, 10, 17, 25, 30, 40, 50]
        
     */
-    // team collaboration //
+    // team collaboration // I am still workiung on the vesion that track the index without using the remove method
   public ArrayList<Integer> merge(ArrayList<Integer> list1,
 				    ArrayList<Integer> list2){
       // code for merge
