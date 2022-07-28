@@ -4,7 +4,14 @@ public class ExpressionTree{
     //You must write this method:
     //Calculate the value of the entire tree
     public double evaluate(){
-      return 10000000000000.0;//replace this
+      double result = 0.0;
+      if (isValue()){
+        result = value;
+        // recursive evaluate/apply
+      } else{
+        result = apply(left.evaluate(), right.evaluate(), operator); 
+      }
+      return result;
     }
 
     //You must write this method:
@@ -17,12 +24,32 @@ public class ExpressionTree{
     //"(12.5*(5.0-8.0)) //a tree that is the product of the previous two example trees
     //"(((2.0+1.0)/(8.0*0.43)) - 1.0)" //a tree with more
     public String toString(){
-     return "replace this with your code";
+      
+      String s = ""; // return  a string
+      if (isValue()){
+        return s += value;
+        
+      } else {
+        s += "(" + left.toString() + " " + operator + " "  + right.toString() + ")";
+      }
+     return  s;
     }
 
+  // toStringPrefix () Challenge 
 
+  public String toStringPrefix(){
+      
+      String s = ""; // return is a string
+      if (isValue()){
+        return s += value;
+        
+      } else {
+        s += "(" + operator + " " + left.toStringPrefix() + " "  + right.toStringPrefix() + ")";
+      }
+     return s ;
+    }
 
-
+// those are the variables for the constructor
   private double value;
   private ExpressionTree left,right;
   private char operator;
@@ -61,7 +88,11 @@ public class ExpressionTree{
     return a-b;
    }else if(op == '*'){
     return a*b;
-   }else{ //  if(op == '/'){ //or any invalid operators
+   } else if(op =='^') {
+     return Math.pow(a,b);
+   } else if(op == 'r') {
+     return Math.pow(a, 1/b); //generalize the squareroot
+   } else{ //  if(op == '/'){ //or any invalid operators
     return a/b;
    }
 
