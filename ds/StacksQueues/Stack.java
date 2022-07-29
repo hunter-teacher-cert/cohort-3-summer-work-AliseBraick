@@ -3,11 +3,13 @@ import java.util.*;
 
   public class Stack{
 
-    // Place private instance variables here
+    // Decalre and initialize instance variables ( object properties) ----> (type: ArrayList, name is stackData)
     private ArrayList<Integer> stackData;
-    int size ;
+    
 
-    // Default constructors 
+    // Default constructors/objects  (We use public and the same name of the class ())
+    // the defaut constructors/objects has no parameters
+    // initialize the varaible stackdata to a new empty ArrayList 
     public Stack (){
       stackData = new ArrayList<Integer> ();
     }
@@ -29,12 +31,14 @@ import java.util.*;
       return stackData.size();
     }
     
-    // implement the pop() method
+  // int pop() - remove and return the top value from the stack
     public Integer pop()  {
       if(stackData.size() == 0){
         return null;
       } else {
-    return stackData.remove(stackData.size()-1);
+        int topValue = stackData.get(stackData.size()-1);
+        stackData.remove(stackData.size()-1);
+      return topValue;
     }
 }
 

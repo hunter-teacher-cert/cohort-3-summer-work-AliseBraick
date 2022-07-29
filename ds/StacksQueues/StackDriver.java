@@ -4,7 +4,7 @@ import java.util.*;
 public class StackDriver{
 
     public static void main(String[] args) {
-  
+  // create the object -s-  type stack
 	    Stack s = new Stack();
   // testing push()
       s.push(7);
@@ -14,11 +14,12 @@ public class StackDriver{
       System.out.println("The array is " + s);
 
   // testing pop ()
-      s.pop();
-    System.out.println("The new array is " + s);
+      int top = s.pop();  
+      System.out.println("The top value that was removed is " + top);
+      System.out.println ("The updated array is " + s);
 
     //testing top()
-    System.out.println(s.top());
+    System.out.println("the top value now is " + s.top());
 
     //testing isEmpty
       System.out.println("Is the stack empty: " +s.isEmpty());
