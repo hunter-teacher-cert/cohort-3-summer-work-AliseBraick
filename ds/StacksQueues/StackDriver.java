@@ -26,8 +26,6 @@ public class StackDriver{
     // testing size()
       System.out.println("The size of the stack is: " + s.size());
   
-  //testing isFull(
-   System.out.println("Is the  stack full: " + s.isFull());
-  
+
 }
 }

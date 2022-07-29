@@ -7,17 +7,12 @@ import java.util.*;
     private ArrayList<Integer> stackData;
     int size ;
 
-    // Place constructors here
-     
+    // Default constructors 
     public Stack (){
       stackData = new ArrayList<Integer> ();
     }
 
-    public Stack (int size ){
-      stackData = new ArrayList<Integer> ();
-      size = 3;
-    }
-
+    // toString( method)
     public String toString(){
       String result = " ";
       result= result + stackData;
@@ -60,13 +55,5 @@ import java.util.*;
          return false;
        }
   }
-    // boolean isFull() - returns true if the stack is full, false otherwise - only implement this if you use an array for implementation
-
-    public boolean isFull(){
-      if (stackData.size() > size){
-        return true;  
-      } else {
-        return false;
-      }
-    }
-  }
+     
+}
