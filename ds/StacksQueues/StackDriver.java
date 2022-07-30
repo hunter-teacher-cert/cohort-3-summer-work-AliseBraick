@@ -1,4 +1,4 @@
- import java.io.*;
+import java.io.*;
 import java.util.*;
 
 public class StackDriver{
@@ -11,12 +11,12 @@ public class StackDriver{
       s.push(10);
       s.push(8);
       s.push(9);
-      System.out.println("The array is " + s);
+      System.out.println("The stack array is " + s);
 
   // testing pop ()
       int top = s.pop();  
       System.out.println("The top value that was removed is " + top);
-      System.out.println ("The updated array is " + s);
+      System.out.println ("The updated stack array is " + s);
 
     //testing top()
     System.out.println("the top value now is " + s.top());
